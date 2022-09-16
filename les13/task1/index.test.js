@@ -13,3 +13,4 @@ it('should get only even numbers', () => {
     const result = getEvenNumbers([1, 2, 3, 4]);
     expect(result).toEqual([2, 4]);
 });
+
