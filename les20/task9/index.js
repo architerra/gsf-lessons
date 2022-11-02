@@ -1,4 +1,4 @@
-export function finishList() {
+function finishList() {
   //   let bodyElem = document.querySelector('body');
   //   const element = document.createElement('button');
   //   element.textContent = buttonText;
@@ -12,7 +12,7 @@ export function finishList() {
 
   const liElemEight = document.createElement('li');
   liElemEight.textContent = '8';
-  ulElem.prepend(liElemEight);
+  ulElem.append(liElemEight);
 
   let specElem = document.querySelector('.special');
 
