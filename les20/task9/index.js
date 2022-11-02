@@ -1,4 +1,4 @@
-function finishList() {
+export function finishList() {
   //   let bodyElem = document.querySelector('body');
   //   const element = document.createElement('button');
   //   element.textContent = buttonText;
