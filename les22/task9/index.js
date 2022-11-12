@@ -4,12 +4,12 @@ function checkTask(event) {
   console.log(event.target.checked);
 }
 
-statusTask.addEventListener('click', checkTask);
+statusTask.addEventListener('change', checkTask);
 
-const textInput = document.querySelector('.text-input');
+// const textInput = document.querySelector('.text-input');
 
-function getText(event) {
-  console.log(event.target.value);
-}
+// function getText(event) {
+//   console.log(event.target.value);
+// }
 
-textInput.addEventListener('change', getText);
+// textInput.addEventListener('change', getText);
