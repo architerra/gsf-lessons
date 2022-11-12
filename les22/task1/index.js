@@ -25,11 +25,33 @@ pElem.addEventListener('click', logGreenP);
 spanElem.addEventListener('click', logGreySpan, true);
 spanElem.addEventListener('click', logGreenSpan);
 
-// spanElem.removeEventListener('click', logGreySpan, true);
+const clearBtn = document.querySelector('.clear-btn');
+const removeBtn = document.querySelector('.remove-handlers-btn');
+const attachBtn = document.querySelector('.attach-handlers-btn');
 
-const clear = document.querySelector('.clear-btn');
-
-clear.addEventListener('click', () => {
+clearBtn.addEventListener('click', () => {
   const eventsListElem = document.querySelector('.events-list');
   eventsListElem.innerHTML = '';
+});
+
+removeBtn.addEventListener('click', () => {
+  divElem.removeEventListener('click', logGreyDiv, true);
+  divElem.removeEventListener('click', logGreenDiv);
+
+  pElem.removeEventListener('click', logGreyP, true);
+  pElem.removeEventListener('click', logGreenP);
+
+  spanElem.removeEventListener('click', logGreySpan, true);
+  spanElem.removeEventListener('click', logGreenSpan);
+});
+
+attachBtn.addEventListener('click', () => {
+  divElem.addEventListener('click', logGreyDiv, true);
+  divElem.addEventListener('click', logGreenDiv);
+
+  pElem.addEventListener('click', logGreyP, true);
+  pElem.addEventListener('click', logGreenP);
+
+  spanElem.addEventListener('click', logGreySpan, true);
+  spanElem.addEventListener('click', logGreenSpan);
 });
