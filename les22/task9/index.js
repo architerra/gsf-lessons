@@ -5,3 +5,11 @@ function checkTask(event) {
 }
 
 statusTask.addEventListener('click', checkTask);
+
+const textInput = document.querySelector('.text-input');
+
+function getText(event) {
+  console.log(event.target.value);
+}
+
+textInput.addEventListener('change', getText);
