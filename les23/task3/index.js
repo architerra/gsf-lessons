@@ -27,9 +27,9 @@ const renderTasks = tasksList => {
       checkbox.setAttribute('type', 'checkbox');
       checkbox.checked = done;
       checkbox.classList.add('list__item-checkbox');
-      //   if (done) {
-      //     listItemElem.classList.add('list__item_done');
-      //   }
+      if (done) {
+        listItemElem.classList.add('list__item_done');
+      }
       listItemElem.append(checkbox, text);
 
       return listItemElem;
