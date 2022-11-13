@@ -9,8 +9,13 @@ const tasks = [
 const createBtn = document.querySelector('.create-task-btn');
 const input = document.querySelector('.task-input');
 function addTask() {
-  tasks.push({ text: 'hhh', done: false });
+  if (input.value == '') {
+    return;
+  }
+  tasks.push({ text: `${input.value}`, done: false });
+  input.value = '';
   console.log(tasks);
+  listElem.innerHTML = '';
   renderTasks(tasks);
 }
 createBtn.addEventListener('click', addTask);
