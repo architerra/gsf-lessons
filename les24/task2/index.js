@@ -6,5 +6,5 @@ const formatter = new Intl.DateTimeFormat('en', {
 });
 
 export function getGreenwichTime(date) {
-  formatter.format(date);
+  return formatter.format(date);
 }
