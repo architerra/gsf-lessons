@@ -50,13 +50,13 @@ const changeDone = event => {
   let findedId = event.target.closest('.list__item-checkbox').dataset.randomId;
   tasks.forEach(obj => {
     if (String(obj.id) == findedId) {
-      obj.done = true;
+      obj.done = event.target.checked;
     }
   });
   listElem.innerHTML = '';
   renderTasks(tasks);
 };
 
-listElem.addEventListener('checked', changeDone);
+listElem.addEventListener('click', changeDone);
 
 renderTasks(tasks);
