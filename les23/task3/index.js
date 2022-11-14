@@ -1,9 +1,9 @@
 const tasks = [
-  { text: 'Buy milk', done: false },
-  { text: 'Pick up Tom from airport', done: false },
-  { text: 'Visit party', done: false },
-  { text: 'Visit doctor', done: true },
-  { text: 'Buy meat', done: true },
+  { text: 'Buy milk', done: false, id: 1 },
+  { text: 'Pick up Tom from airport', done: false, id: 2 },
+  { text: 'Visit party', done: false, id: 3 },
+  { text: 'Visit doctor', done: true, id: 4 },
+  { text: 'Buy meat', done: true, id: 5 },
 ];
 
 const createBtn = document.querySelector('.create-task-btn');
@@ -12,7 +12,7 @@ function addTask() {
   if (input.value == '') {
     return;
   }
-  tasks.push({ text: `${input.value}`, done: false });
+  tasks.push({ text: `${input.value}`, done: false, id: Math.random() });
   input.value = '';
   console.log(tasks);
   listElem.innerHTML = '';
@@ -25,16 +25,15 @@ const listElem = document.querySelector('.list');
 const renderTasks = tasksList => {
   const tasksElems = tasksList
     .sort((a, b) => a.done - b.done)
-    .map(({ text, done }) => {
+    .map(({ text, done, id }) => {
       const listItemElem = document.createElement('li');
-      let newId = Math.random();
-      listItemElem.setAttribute('id', `${newId}`);
+      listItemElem.setAttribute('id', id);
       listItemElem.classList.add('list__item');
       const checkbox = document.createElement('input');
       checkbox.setAttribute('type', 'checkbox');
       checkbox.setAttribute('data-random-id', 'text');
       checkbox.checked = done;
-      checkbox.dataset.randomId = `${newId}`;
+      checkbox.dataset.randomId = `${id}`;
       checkbox.classList.add('list__item-checkbox');
       if (done) {
         listItemElem.classList.add('list__item_done');
@@ -58,6 +57,6 @@ const changeDone = event => {
   renderTasks(tasks);
 };
 
-listElem.addEventListener('click', changeDone);
+listElem.addEventListener('checked', changeDone);
 
 renderTasks(tasks);
