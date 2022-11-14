@@ -27,10 +27,14 @@ const renderTasks = tasksList => {
     .sort((a, b) => a.done - b.done)
     .map(({ text, done }) => {
       const listItemElem = document.createElement('li');
+      let newId = Math.random();
+      listItemElem.setAttribute('id', `${newId}`);
       listItemElem.classList.add('list__item');
       const checkbox = document.createElement('input');
       checkbox.setAttribute('type', 'checkbox');
+      checkbox.setAttribute('data-random-id', 'text');
       checkbox.checked = done;
+      checkbox.dataset.randomId = `${newId}`;
       checkbox.classList.add('list__item-checkbox');
       if (done) {
         listItemElem.classList.add('list__item_done');
@@ -42,5 +46,18 @@ const renderTasks = tasksList => {
 
   listElem.append(...tasksElems);
 };
+
+const changeDone = event => {
+  let findedId = event.target.closest('.list__item-checkbox').dataset.randomId;
+  tasks.forEach(obj => {
+    if (String(obj.id) == findedId) {
+      obj.done = true;
+    }
+  });
+  listElem.innerHTML = '';
+  renderTasks(tasks);
+};
+
+listElem.addEventListener('click', changeDone);
 
 renderTasks(tasks);
