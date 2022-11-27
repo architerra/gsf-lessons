@@ -1,4 +1,4 @@
-// localStorage.clear();
+localStorage.clear();
 // localStorage.setItem('Hobbies', JSON.stringify({ name: 'Tom' }));
 
 export const getLocalStorageData = () => {
