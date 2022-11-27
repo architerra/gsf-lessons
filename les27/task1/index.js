@@ -1,7 +1,7 @@
-// localStorage.setItem('Hobbies', JSON.stringify({ name: Tom }));
-// localStorage.setItem('name', 'Tom');
+localStorage.clear();
+localStorage.setItem('Hobbies', JSON.stringify({ name: 'Tom' }));
 
-export const getLocalStorageData = () => {
+const getLocalStorageData = () => {
   return Object.entries(localStorage).reduce((acc, [key, value]) => {
     // let newValue;
     // try {
@@ -11,7 +11,7 @@ export const getLocalStorageData = () => {
     // }
     return {
       ...acc,
-      [key]: value,
+      [key]: JSON.parse(value),
     };
   }, {});
 };
