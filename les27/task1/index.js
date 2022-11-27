@@ -11,7 +11,7 @@ export const getLocalStorageData = () => {
     // }
     return {
       ...acc,
-      [key]: JSON.parse(value),
+      [key]: value,
     };
   }, {});
 };
