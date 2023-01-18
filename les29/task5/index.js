@@ -29,10 +29,10 @@ export const shmoment = initDate => {
        
         subtract(timeInterval, number) {
             if (timeInterval === 'years') {
-                resultDate -= (number * 31556952000);
+                resultDate -= (number * 31557600000);
             }
             if (timeInterval === 'months') {
-                resultDate -= (number * 2629746000);
+                resultDate -= (number * 2629800000);
             }
             if (timeInterval === 'days') {
                 resultDate -= (number * 86400000);
