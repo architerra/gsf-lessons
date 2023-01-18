@@ -53,9 +53,13 @@ export const shmoment = initDate => {
         },
         
         result() {
-            return resultDate.toString;
+            let newDate = new Date(resultDate);
+            return newDate;
         }
     };
 
     return calculator;
 };
+
+// const res = shmoment('2020, 1, 1').subtract('milliseconds', 2).result();
+// console.log(res)
