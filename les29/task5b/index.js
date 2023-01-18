@@ -16,13 +16,13 @@ export const shmoment = initDate => {
                 resultDate.setHours(resultDate.getHours() + number);
             }
             if (timeInterval === 'minutes') {
-                resultDate.setMinutes(resultDate.getMinsetMinutes() + number);
+                resultDate.setMinutes(resultDate.getMinutes() + number);
             }
             if (timeInterval === 'seconds') {
                 resultDate.setSeconds(resultDate.getSeconds() + number);
             }
             if (timeInterval === 'milliseconds') {
-                resultDate.setMilliseconds(resultDate.getMinsetMilliseconds() + number);
+                resultDate.setMilliseconds(resultDate.getMilliseconds() + number);
             };
             return this;
         },
@@ -41,13 +41,13 @@ export const shmoment = initDate => {
                 resultDate.setHours(resultDate.getHours() - number);
             }
             if (timeInterval === 'minutes') {
-                resultDate.setMinutes(resultDate.getMinsetMinutes() - number);
+                resultDate.setMinutes(resultDate.getMinutes() - number);
             }
             if (timeInterval === 'seconds') {
                 resultDate.setSeconds(resultDate.getSeconds() - number);
             }
             if (timeInterval === 'milliseconds') {
-                resultDate.setMilliseconds(resultDate.getMinsetMilliseconds() - number);
+                resultDate.setMilliseconds(resultDate.getMilliseconds() - number);
             };
             return this;
         },
