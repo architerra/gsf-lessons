@@ -18,6 +18,8 @@ export const addImageV2 = url => {
 
     img.addEventListener('error', onImageLoadError);
   });
+
+  return addImage;
 };
 
 // examples
