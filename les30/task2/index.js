@@ -12,16 +12,14 @@ export const addImageV2 = url => {
       resolve({ width, height });
     };
 
-    const onImageLoadError = () => reject('Image load failed');
-
     img.addEventListener('load', onImageLoaded);
 
-    img.addEventListener('error', onImageLoadError);
+    imgElem.addEventListener('error', () => reject(new Error('Image load is failed')));
   });
 
   return addImage;
 };
 
-addImageV2('https://server.com/image.png')
-  .then(data => console.log(data)) // ==> { width: 200, height: 100 }
-  .catch(error => console.log(error)); // ==> 'Image load failed'
+// addImageV2('https://server.com/image.png')
+//   .then(data => console.log(data)) // ==> { width: 200, height: 100 }
+//   .catch(error => console.log(error)); // ==> 'Image load failed'
