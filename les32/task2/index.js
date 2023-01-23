@@ -14,6 +14,8 @@ const request = url =>
     }, randomDelay);
   });
 
+const servers = ['https://server.com/us', 'https://server.com/eu', 'https://server.com/au'];
+
 export const getUserASAP = userId => {
   const userUrls = servers.map(serverUrl => `${serverUrl}/${userId}`);
 
