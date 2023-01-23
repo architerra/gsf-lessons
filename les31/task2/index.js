@@ -1,4 +1,4 @@
-export const acyncCalkulator = numbr =>
+export const acyncCalculator = numbr =>
   new Promise(resolve => {
     setTimeout(() => {
       console.log(`Initial value: ${numbr}`);
