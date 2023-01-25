@@ -4,7 +4,11 @@ export function getTasksList() {
   return fetch(baseUrl).then(responce => responce.json());
 }
 
-function getTaskById(taskId) {}
+export function getTaskById(taskId) {
+  return fetch(`https://5e5cf5eb97d2ea0014796f01.mockapi.io/api/v1/tasks/${taskId}`).then(
+    responce => responce.json(),
+  );
+}
 
 // examples
 // getTasksList().then(tasksList => {
