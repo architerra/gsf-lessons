@@ -25,10 +25,14 @@ function createUserHandler(event) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(formData),
-  }).then(body => {
-    alert(JSON.stringify(formData));
-  });
-  formElem.reset();
+  })
+    .then(res => {
+      return res.json();
+    })
+    .then(body => {
+      alert(JSON.stringify(body));
+      formElem.reset();
+    });
 }
 
 formElem.addEventListener('submit', createUserHandler);
