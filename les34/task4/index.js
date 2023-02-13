@@ -4,8 +4,7 @@ const emailInputElem = document.querySelector('#email');
 const passwordInputElem = document.querySelector('#password');
 const buttonElem = document.querySelector('.submit-button');
 
-const bool = false;
-buttonElem.setAttribute('disabled', bool);
+buttonElem.setAttribute('disabled', true);
 
 console.log(buttonElem);
 
@@ -20,7 +19,7 @@ const onEmailChange = () => {
   const res = formElem.reportValidity();
   console.log(res);
   if (res == true) {
-    buttonElem.removeAttribute('disabled', bool);
+    buttonElem.removeAttribute('disabled', true);
   }
 };
 
