@@ -12,9 +12,6 @@ console.log(buttonElem);
 
 console.log(buttonElem);
 
-// const res = formElem.reportValidity();
-// console.log(res);
-
 const onEmailChange = () => {
   const res = formElem.reportValidity();
   console.log(res);
