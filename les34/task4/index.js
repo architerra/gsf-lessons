@@ -1,7 +1,30 @@
 const formElem = document.querySelector('.login-form');
-
+const formInput = document.querySelector('.form-input');
 const emailInputElem = document.querySelector('#email');
 const passwordInputElem = document.querySelector('#password');
+const buttonElem = document.querySelector('.submit-button');
+
+const bool = false;
+buttonElem.setAttribute('disabled', bool);
+
+console.log(buttonElem);
+
+// buttonElem.removeAttribute('disabled', bool);
+
+console.log(buttonElem);
+
+// const res = formElem.reportValidity();
+// console.log(res);
+
+const onEmailChange = () => {
+  const res = formElem.reportValidity();
+  console.log(res);
+  if (res == true) {
+    buttonElem.removeAttribute('disabled', bool);
+  }
+};
+
+emailInputElem.addEventListener('input', onEmailChange);
 
 const serverUrl = 'https://63e0cae2dd7041cafb393784.mockapi.io/api/v1/forms';
 
@@ -12,12 +35,6 @@ function createUserHandler(event) {
     (acc, [field, value]) => ({ ...acc, [field]: value }),
     {},
   );
-
-  // const user = {
-  //   email: 'test@gmail.com',
-  //   name: 'Olexiy',
-  //   password: `${passwordInputElem}`,
-  // };
 
   const res = fetch(serverUrl, {
     method: 'POST',
