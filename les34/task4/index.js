@@ -34,7 +34,7 @@ const onEmailChange = () => {
 //   }
 // };
 
-formInput.addEventListener('input', onEmailChange);
+formElem.addEventListener('input', onEmailChange);
 
 const serverUrl = 'https://63e0cae2dd7041cafb393784.mockapi.io/api/v1/forms';
 
