@@ -1,4 +1,4 @@
-export const parceUser = jsonUser => {
+export const parseUser = jsonUser => {
   try {
     return JSON.parse(jsonUser);
   } catch (e) {
@@ -6,6 +6,6 @@ export const parceUser = jsonUser => {
   }
 };
 
-// const res = parceUser('{"name": "John"}');
+// const res = parseUser('{"name": "John"}');
 
 // console.log(res);
