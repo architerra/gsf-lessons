@@ -12,4 +12,4 @@ export const fetchUser = async userId => {
 };
 
 // res = fetchUser('facebook');
-// console.log(res);
+// console.log(res)
