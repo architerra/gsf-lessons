@@ -1,7 +1,7 @@
 export const fetchUserData = userName => {
   return fetch(`https://api.github.com/users/${userName}`).then(responce => {
     if (responce.ok) {
-      responce.json();
+      return responce.json();
     }
     throw new Error('Failed to load data');
   });
