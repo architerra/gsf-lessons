@@ -10,7 +10,7 @@ const fetchUserData = async userName => {
   return res;
 };
 
-const getUsersBlogs = users => {
+export const getUsersBlogs = users => {
   const result = [];
   users.forEach(e => {
     const userData = fetchUserData(e);
